@@ -17,6 +17,7 @@
                 $data = $stmt_result->fetch_assoc();
                 if ($data['password'] === $password) {
                     echo "Login Successful";
+                    header('Location: purchase.html'); exit;
                 } else {
                     echo "Invalid Username or Password";
                 }
