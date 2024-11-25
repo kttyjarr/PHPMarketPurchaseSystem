@@ -1,0 +1,75 @@
+body {
+    min-width: 1320px; 
+    min-height: 800px; 
+    overflow: hidden; 
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('Photos/login.svg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.register {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.register-box {
+    padding: 40px;
+    width: 1100px;
+    height: 600px;
+    background-color: #1f1f1f; 
+    border-radius: 40px;
+    margin: 10px;
+    line-height: 1.5;
+    transition: box-shadow 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.register-box:hover {
+    box-shadow: 0 0px 10px 5px #000000;
+    transition: box-shadow 0.3s ease;
+}
+
+input {
+    width: 70%;
+    padding: 20px;
+    margin-top: 40px;
+    margin-bottom: 10px; /* Changed from -90px to create space for error message */
+    border: none;
+    border-radius: 5px;
+    background-color: #eeeeee;
+    font-size: 16px;
+}
+button {
+    width: 28%;
+    margin-top: 20px;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fdfdfd;
+    color: #000000;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+}
+
+button:hover {
+    background-color: #ebc25b;
+    color: #1f1f1f;
+}
+
+.error-message {
+    color: #ff0000;
+    width: 70%; 
+    margin: -5px 0 5px 3;
+    font-size: 14px;
+    height: 20px;
+    display: none;
+}
