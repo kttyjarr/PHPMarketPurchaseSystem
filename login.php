@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conn = new mysqli('localhost', 'username', 'password', 'supermarket_customers');
+$conn = new mysqli('localhost', 'root', '', 'supermarket_customers');
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);

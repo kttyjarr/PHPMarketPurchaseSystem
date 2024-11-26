@@ -7,7 +7,7 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-$conn = new mysqli('localhost', 'username', 'password', 'supermarket_customers');
+$conn = new mysqli('localhost', 'root', '', 'supermarket_customers');
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -24,14 +24,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $products = [];
 
         foreach ($cartData as $item) {
-            $category = $item['category'];
             $product = $item['product'];
             $price = floatval($item['price']);
             $quantity = intval($item['quantity']);
             
             $totalPrice += $price * $quantity;
             $products[] = [
-                'category' => $category,
                 'product' => $product,
                 'price' => $price,
                 'quantity' => $quantity
