@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +13,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Purchase</title>
     <link rel="stylesheet" href="purchase.css">
-
 </head>
 <body>
     <h1>The Grocery Hub</h1>
@@ -41,45 +48,18 @@
                 <button class="product">Onions (1 kg) - ₱120.0</button>
                 <button class="product">Garlic (1 kg) - ₱180.0</button>
             </div>
-
-            <div class="category">
-                <div class="category-title">Household Items</div>
-                <button class="product">Laundry Detergent (1kg) - ₱180.0</button>
-                <button class="product">Dishwashing Liquid (500 ml) - ₱90.0</button>
-                <button class="product">Paper Paper (4 rolls) - ₱100.0</button>
-                <button class="product">Shampoo (200 ml) - ₱120.0</button>
-                <button class="product">Bath Soap (Pack of 3) - ₱75.0</button>
-            </div>
-
-            <div class="category">
-                <div class="category-title">Frozen Goods</div>
-                <button class="product">Hotdogs (1kg) - ₱160.0</button>
-                <button class="product">Frozen Fish (1kg) - ₱200.0</button>
-                <button class="product">Ice Cream (1 liter) - ₱250.0</button>
-
-            </div>
-
-            <div class="category">
-                <div class="category-title">Dairy Products</div>
-                <button class="product">Cheese (200g) - ₱110.0</button>
-                <button class="product">Yogurt (100g) - ₱40.0</button>
-                <button class="product">Fresh Milk (1L) - ₱100.0</button>
-            </div>
-            
             <div class="category">
                 <div class="category-title">Beverages</div>
-                <button class="product">Bottled Water (1 litter) - ₱20.0</button>
+                <button class="product">Bottled Water (1 liter) - ₱20.0</button>
                 <button class="product">Juice Juice (1L) - ₱95.0</button>
                 <button class="product">Beer (Can) - ₱60.0</button>
             </div>
-
             <div class="category">
                 <div class="category-title">Spices & Condiments</div>
                 <button class="product">Salt (1kg) - ₱25.0</button>
                 <button class="product">Soy Sauce (500ml) - ₱40.0</button>
                 <button class="product">Vinegar (500ml) - ₱45.0</button>
                 <button class="product">Black Pepper (50g) - ₱35.0</button>
-
             </div>
         </div>
         
@@ -95,7 +75,6 @@
                 <button type="submit" id="submit-button" class="submit-button">Buy</button>
             </form>
         </div>
-
     </div>
     <script src="purchase.js"></script>
 </body>
