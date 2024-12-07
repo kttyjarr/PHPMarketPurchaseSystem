@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->fetch();
         $_SESSION['user_id'] = $userId;
         $_SESSION['username'] = $username;
-        header('Location: purchase.php');
+        header('Location: accountPage.html');
         exit;
     } else {
         echo "Invalid username or password";

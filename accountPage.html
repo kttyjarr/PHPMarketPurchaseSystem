@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: url(Photos/login.svg) no-repeat;
+            background-size: cover;
+        }    
+        .container {
+            padding: 40px;
+            width: 400px;
+            height: 200px;
+            color: #ffffff;
+            background-color: #1f1f1f; 
+            border-radius: 40px;
+            margin: 10px;
+            line-height: 1.5;
+            transition: box-shadow 0.3s ease-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ebc25b;
+            color: #1f1f1f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Grocery Hub</h1>
+        <div class="button-container">
+            <button onclick="window.location.href='purchase.html'">Purchase</button>
+            <button onclick="confirmDelete()">Delete</button>
+        </div>
+    </div>
+
+    <script>
+        function confirmDelete() {
+            if (confirm("Your account will be deleted however, purchase history will not be deleted. Are you sure you want to delete?")) {
+                window.location.href = 'deleteAccount.php';
+            }
+        }
+    </script>
+</body>
+</html>
