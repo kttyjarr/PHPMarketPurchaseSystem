@@ -70,12 +70,12 @@ function updateCartDisplay() {
         cartList.appendChild(li);
     });
     
-    // Update total and hidden input
+    // Update total
     totalAmount.textContent = total.toFixed(2);
     document.getElementById('cartData').value = JSON.stringify(cart);
 }
 
-// Event delegation for remove buttons
+// for remove buttons
 document.getElementById('cartList').addEventListener('click', (e) => {
     if (e.target.classList.contains('remove-btn')) {
         const index = parseInt(e.target.dataset.index);

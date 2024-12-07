@@ -21,7 +21,7 @@ body {
 .register-box {
     padding: 40px;
     width: 1100px;
-    height: 600px;
+    height: 750px;
     background-color: #1f1f1f; 
     border-radius: 40px;
     margin: 10px;
@@ -41,12 +41,13 @@ input {
     width: 70%;
     padding: 20px;
     margin-top: 40px;
-    margin-bottom: 10px; /* Changed from -90px to create space for error message */
+    margin-bottom: 10px; 
     border: none;
     border-radius: 5px;
     background-color: #eeeeee;
     font-size: 16px;
 }
+
 button {
     width: 28%;
     margin-top: 20px;
@@ -66,10 +67,6 @@ button:hover {
 }
 
 .error-message {
-    color: #ff0000;
-    width: 70%; 
-    margin: -5px 0 5px 3;
-    font-size: 14px;
-    height: 20px;
-    display: none;
+    color: red;
+    margin-bottom: 20px;
 }

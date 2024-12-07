@@ -23,7 +23,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: accountPage.html');
         exit;
     } else {
-        echo "Invalid username or password";
+        $_SESSION['error'] = 'Invalid username or password';
+        header('Location: invalid.html');
+        exit;
     }
 }
 ?>

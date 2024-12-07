@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Successful</title>
+    <title>Invalid Login</title>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
             text-align: center;
             font-family: Arial, sans-serif;
             background: url(Photos/login.svg) no-repeat;
             background-size: cover;
             height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .container {
             max-width: 600px;
@@ -30,17 +29,30 @@
             transition: box-shadow 0.3s ease-out;
         }
         .container:hover {
-        box-shadow: 0 0px 10px 5px #000000;
-        transition: box-shadow 0.3s ease;
+            box-shadow: 0 0px 10px 5px #000000;
+            transition: box-shadow 0.3s ease;
         }
-        
+        .links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .links a {
+            color: #ebc25b;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Registration Successful</h1>
-        <p>Thank you for registering. Your account has been successfully created.</p>
-        <a href="login.html">Go to Login Page</a>
+        <h1>Invalid Username or Password</h1>
+        <p>Please enter your credentials again.</p>
+        <div class="links">
+            <a href="login.html">Go to Login Page</a>
+            <span>or</span>
+            <a href="register.html">Register</a>
+        </div>
     </div>
 </body>
 </html>

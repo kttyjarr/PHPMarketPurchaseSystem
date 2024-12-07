@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marketplace Registeration Page</title>
+    <title>Marketplace Registration Page</title>
     <link rel="stylesheet" href="register.css">
 </head>
 <body>
 
     <div class="register">
-    
         <div class="register-box">
-        
-            <form action="register.php" method="POST">
+            <div id="error-message" class="error-message"></div>
+            <form id="registerForm" action="register.php" method="POST">
                 <input type="text" name="username" class="form-field" placeholder="Username" required>
                 <input type="password" name="password" class="form-field" placeholder="Password" required>
+                <input type="text" name="cardNumber" class="form-field" placeholder="Card Number" required>
+                <input type="text" name="cardHolderName" class="form-field" placeholder="Card Holder Name" required>
+                <input type="text" name="expiryDate" class="form-field" placeholder="Expiry Date (MM/YYYY)" required>
+                <input type="text" name="cvv" class="form-field" placeholder="CVV" required>
                 <button type="reset">Reset</button>
                 <button type="submit">Submit</button>
             </form>
@@ -40,7 +43,29 @@
     </div>
 
     <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            const cardNumber = document.querySelector('input[name="cardNumber"]').value;
+            const expiryDate = document.querySelector('input[name="expiryDate"]').value;
+            const cvv = document.querySelector('input[name="cvv"]').value;
+            const errorMessage = document.getElementById('error-message');
+
+            errorMessage.innerHTML = '';
+
+            if (!/^\d{16}$/.test(cardNumber)) {
+                errorMessage.innerHTML += '<p>Invalid card number. It must be 16 digits.</p>';
+                event.preventDefault();
+            }
+
+            if (!/^\d{2}\/\d{4}$/.test(expiryDate)) {
+                errorMessage.innerHTML += '<p>Invalid expiry date. It must be in MM/YYYY format.</p>';
+                event.preventDefault();
+            }
+
+            if (!/^\d{3}$/.test(cvv)) {
+                errorMessage.innerHTML += '<p>Invalid CVV. It must be 3 digits.</p>';
+                event.preventDefault();
+            }
+        });
     </script>
-    
 </body>
 </html>

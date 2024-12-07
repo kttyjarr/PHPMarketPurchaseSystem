@@ -52,13 +52,14 @@
         <h1>Welcome to Grocery Hub</h1>
         <div class="button-container">
             <button onclick="window.location.href='purchase.html'">Purchase</button>
-            <button onclick="confirmDelete()">Delete</button>
+            <button onclick="confirmDelete()">Delete Account</button>
+            <button onclick="window.location.href='viewPurchases.php'">View Purchase History</button>
         </div>
     </div>
 
     <script>
         function confirmDelete() {
-            if (confirm("Your account will be deleted however, purchase history will not be deleted. Are you sure you want to delete?")) {
+            if (confirm("Your account will be deleted forever. However, purchase history will not be deleted. Are you sure you want to delete?")) {
                 window.location.href = 'deleteAccount.php';
             }
         }
